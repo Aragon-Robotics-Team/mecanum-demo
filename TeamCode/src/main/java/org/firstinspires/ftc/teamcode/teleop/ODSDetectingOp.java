@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -13,11 +14,13 @@ public class ODSDetectingOp extends LinearOpMode {
 
     Drivetrain drivetrain;
     OpticalDistanceSensor opticalDistanceSensor;
-    ElapsedTime runtime = new ElapsedTime();
+    DeviceInterfaceModule deviceInterfaceModule;
 
     @Override
     public void runOpMode() throws InterruptedException {
         drivetrain = new Drivetrain(hardwareMap.dcMotor.get("drive_front_left"), hardwareMap.dcMotor.get("drive_front_right"), hardwareMap.dcMotor.get("drive_back_left"), hardwareMap.dcMotor.get("drive_back_right"));
+        deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get("dim");
+
         opticalDistanceSensor = hardwareMap.opticalDistanceSensor.get("ods");
         opticalDistanceSensor.enableLed(true);
 
