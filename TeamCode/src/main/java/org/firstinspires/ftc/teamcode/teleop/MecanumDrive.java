@@ -20,7 +20,7 @@ public class MecanumDrive extends OpMode {
 
     public void loop() {
         //mecanum drive algorithm
-        drivetrain.mechanumDrive(-Math.pow(gamepad1.left_stick_x, 7), -Math.pow(gamepad1.left_stick_y, 7), Math.pow(gamepad1.right_stick_x, 7));
+        drivetrain.mechanumDrive(-Math.pow(gamepad1.left_stick_x, 9), -Math.pow(gamepad1.left_stick_y, 9), Math.pow(gamepad1.right_stick_x, 9));
 
         telemetry.addData("G1_left_stick:", (gamepad1.left_stick_x*100)+ " " + gamepad1.left_stick_y*100);
         telemetry.addData("G1_right_stick:", (gamepad1.right_stick_x*100)+ " " + gamepad1.right_stick_y*100);
